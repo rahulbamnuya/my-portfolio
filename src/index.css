@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+  padding: 3px;
+  border-radius: 1rem;
+}
+
+.gradient-border > div {
+  background: white;
+  border-radius: 0.875rem;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
