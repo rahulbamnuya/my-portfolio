@@ -132,7 +132,7 @@ export default function Portfolio() {
     'Contributed to Hacktoberfest & GSSoC 2024 via bug fixes and features'
   ];
 
-  const scrollToSection = (section) => {
+  const scrollToSection = (section: string) => {
     setActiveSection(section);
     setMobileMenuOpen(false);
   };
@@ -154,8 +154,8 @@ export default function Portfolio() {
                   key={section}
                   onClick={() => scrollToSection(section)}
                   className={`capitalize transition-colors ${activeSection === section
-                      ? 'text-purple-400'
-                      : 'text-gray-300 hover:text-purple-400'
+                    ? 'text-purple-400'
+                    : 'text-gray-300 hover:text-purple-400'
                     }`}
                 >
                   {section}
