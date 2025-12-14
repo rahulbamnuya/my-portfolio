@@ -8,11 +8,46 @@ export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const skills = {
-    languages: ['Python', 'JavaScript', 'Java', 'C++', 'SQL'],
-    frameworks: ['React.js', 'Node.js', 'Express.js', 'Flask', 'LangChain', 'Streamlit'],
-    databases: ['MongoDB', 'MySQL', 'Firebase', 'Redis', 'ChromaDB', 'Pinecone'],
-    aiml: ['BLIP2', 'CLIP', 'LLaMA', 'Mistral', 'Gemini API', 'RAG Pipeline', 'FAISS']
-  };
+  languages: [
+    'Python',
+    'Java',
+    'JavaScript',
+    
+    'SQL'
+  ],
+
+  frameworks: [
+    'Node.js',
+    'Express.js',
+    'React.js',
+    'Flask',
+    'LangChain',
+    'Streamlit'
+  ],
+
+  databases: [
+    'MySQL',
+    'MongoDB',
+    
+    'Redis',
+    'ChromaDB',
+    'Pinecone'
+  ],
+
+  aiml: [
+    
+    'LLM Integration',
+    'Retrieval-Augmented Generation (RAG)',
+    'Agentic AI Systems',
+    'LangChain Agents',
+    'CrewAI',
+    'AutoGen',
+    
+    
+    'Prompt Engineering'
+  ]
+};
+
 
   const projects = [
     {
@@ -26,25 +61,33 @@ export default function Portfolio() {
         'Built interactive routing maps with real-time analytics dashboard'
       ],
       tech: ['Python', 'MERN Stack', 'Google OR-Tools', 'MongoDB', 'React.js', 'Leaflet.js', 'JWT'],
-      github: 'https://github.com/rahulbamaniya/route-optimization',
-      demo: 'https://route-optimization-demo.vercel.app',
+      github: 'https://github.com/rahulbamnuya/Major_Project_CSE',
+      demo: 'https://complexrouteoptimizer.netlify.app/',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80'
     },
     {
-      title: 'AI-Powered Cold Email Generator',
-      period: 'Jun 2025 - Jul 2025',
-      description: 'Developed an AI system for personalized outreach and automated cold-email generation. Integrated LLaMA 3.1 with LangChain and ChromaDB for context-aware semantic retrieval and high-conversion email workflows.',
-      highlights: [
-        'Reduced manual email writing effort by 60%',
-        'Implemented semantic retrieval using ChromaDB vector database',
-        'Built intuitive Streamlit interface for non-technical users',
-        'Generated personalized emails based on job postings and portfolios'
-      ],
-      tech: ['LLaMA 3.1', 'LangChain', 'Streamlit', 'ChromaDB', 'Python'],
-      github: 'https://github.com/rahulbamaniya/ai-email-generator',
-      demo: 'https://ai-email-generator.streamlit.app',
-      image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80'
-    },
+  title: 'AI Podcast Generator (Agentic AI)',
+  period: 'Jun 2025 - Jul 2025',
+  description: 'Developed an Agentic AI system that autonomously scrapes blogs, summarizes content, and converts text into podcast-style audio using large language models and tool-based agents.',
+  highlights: [
+    'Built an autonomous agent pipeline for web scraping, content summarization, and audio generation',
+    'Integrated Gemini LLM for high-quality long-form content summarization',
+    'Implemented gTTS-based text-to-speech for instant podcast playback and downloads',
+    'Designed a Streamlit interface for end-to-end blog-to-podcast conversion'
+  ],
+  tech: [
+    'Python',
+    'Streamlit',
+    'Firecrawl',
+    'Gemini LLM',
+    'gTTS',
+    'LangChain'
+  ],
+  github: 'https://github.com/rahulbamnuya/AI-Podcast-Generator/tree/main',
+  demo: 'https://ai-email-generator.streamlit.app',
+  image: 'https://huggingface.co/spaces/rahulbamniya/Agentic_AI_Podcast_generate'
+}
+,
     {
       title: 'Dream Nest – Hotel Booking Platform',
       period: 'Aug 2024 - Oct 2024',
@@ -56,8 +99,8 @@ export default function Portfolio() {
         'Built responsive UI with category-based browsing and real-time pricing'
       ],
       tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Twilio', 'Cloudinary', 'JWT'],
-      github: 'https://github.com/rahulbamaniya/dream-nest',
-      demo: 'https://dream-nest-hotel.vercel.app',
+      github: 'https://github.com/rahulbamnuya/Hotel-Booking-Website-',
+      demo: 'https://hotel-booking-website-1-jxgl.onrender.com/',
       image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80'
     },
     {
@@ -71,49 +114,47 @@ export default function Portfolio() {
         'Encrypted sensitive data for enhanced security'
       ],
       tech: ['Node.js', 'Express.js', 'Firebase', 'WhatsApp API', 'JWT', 'HTML/CSS/JavaScript'],
-      github: 'https://github.com/rahulbamaniya/tenant-billing',
-      demo: 'https://tenant-billing-app.vercel.app',
+      github: 'https://github.com/rahulbamnuya/Tenent_Bill_Management',
+      demo: 'https://tenent-bill-management-5.onrender.com/',
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80'
     }
   ];
 
   const experiences = [
-    {
-      title: 'AI Research Intern',
-      company: 'MANIT Bhopal',
-      period: 'June 2025 - July 2025',
-      location: 'Bhopal, Madhya Pradesh',
-      description: 'Fine-tuned BLIP2 on RSICD dataset for satellite image captioning, improving captioning quality by 15%. Built CLIP-based semantic retrieval system on EarthVQA and integrated Mistral-powered RAG pipeline for visual question answering. Enhanced satellite image annotation accuracy via multi-modal reasoning, reducing manual verification effort by 20%.'
-    },
-    {
-      title: 'Open Source Contributor',
-      company: 'GirlScript Summer of Code',
-      period: 'Oct 2024 - Nov 2024',
-      location: 'Remote',
-      description: 'Contributed to open source projects during GSSoC\'24, securing Rank 240/17,000. Worked on various web development and AI projects with meaningful contributions.'
-    },
-    {
-      title: 'Open Source Developer',
-      company: 'Hacktoberfest',
-      period: 'Oct 2024 - Nov 2024',
-      location: 'Remote',
-      description: 'Participated in Hacktoberfest 2024, making meaningful contributions to open source repositories through bug fixes and feature implementations.'
-    },
-    {
-      title: 'Campus Ambassador',
-      company: 'E-Cell, IIT Bombay',
-      period: 'June 2024 - Aug 2024',
-      location: 'India',
-      description: 'Represented E-Cell IIT Bombay on campus, promoting entrepreneurship and organizing events to foster innovation culture.'
-    },
-    {
-      title: 'Summer Intern',
-      company: 'Encryptix',
-      period: 'June 2024 - July 2024',
-      location: 'Indore, Madhya Pradesh',
-      description: 'Worked on software development projects during summer internship, gaining hands-on experience in full-stack development.'
-    }
-  ];
+  {
+    title: 'AI Research Intern',
+    company: 'MANIT Bhopal',
+    period: 'Jun 2025 – Jul 2025',
+    location: 'Bhopal, Madhya Pradesh',
+    description:
+      'Conducted applied research in multimodal AI and satellite image understanding. Fine-tuned BLIP2 on the RSICD dataset, achieving a 15% improvement in captioning accuracy. Built a CLIP-based semantic retrieval system on EarthVQA and integrated a Mistral-powered RAG pipeline for visual question answering. Reduced manual image verification effort by 20% through automated multimodal reasoning.'
+  },
+  {
+    title: 'Open Source Contributor',
+    company: 'GirlScript Summer of Code (GSSoC) & Hacktoberfest',
+    period: 'Oct 2024 – Nov 2024',
+    location: 'Remote',
+    description:
+      'Contributed to multiple open-source repositories during GSSoC 2024 and Hacktoberfest 2024. Implemented feature enhancements, bug fixes, and documentation improvements across web and AI-based projects. Secured Rank 240 among 17,000+ contributors in GSSoC, demonstrating consistent and high-quality contributions.'
+  },
+  {
+    title: 'Campus Ambassador',
+    company: 'E-Cell, IIT Bombay',
+    period: 'Jun 2024 – Aug 2024',
+    location: 'India',
+    description:
+      'Acted as a liaison between E-Cell IIT Bombay and the campus community. Promoted entrepreneurship initiatives, coordinated outreach activities, and supported innovation-driven events.'
+  },
+  {
+    title: 'Software Engineering Intern',
+    company: 'Encryptix',
+    period: 'Jun 2024 – Jul 2024',
+    location: 'Indore, Madhya Pradesh',
+    description:
+      'Worked on full-stack development tasks involving backend APIs and frontend components. Gained hands-on experience in building and debugging production-level features within an agile development environment.'
+  }
+];
+
 
   const certifications = [
     'MongoDB Developer Toolkit – GeeksforGeeks',
@@ -197,7 +238,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-purple-500/50 shadow-2xl shadow-purple-500/50">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                    src="/images/image.png"
                     alt="Rahul Bamaniya"
                     className="w-full h-full object-cover"
                   />
@@ -206,14 +247,21 @@ export default function Portfolio() {
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
-              Rahul Bamaniya
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-4">
-              CSE Undergrad @ SGSITS, Indore | CGPA: 7.37
-            </p>
-            <p className="text-lg text-gray-400 mb-8">
-              AI Research Intern | Full-Stack Developer | Open Source Contributor
-            </p>
+  Rahul Bamaniya
+</h1>
+
+<p className="text-xl md:text-2xl text-gray-300 mb-4">
+  B.Tech Computer Engineering @ SGSITS, Indore | CGPA: 7.37
+</p>
+
+<p className="text-lg text-gray-400">
+  Engineering scalable products using Agentic AI, modern backend systems, and full-stack technologies
+</p>
+
+
+
+
+
             <div className="flex justify-center gap-4 flex-wrap">
               <a
                 href="https://www.linkedin.com/in/rahul-bamaniya-1375772a6"
@@ -232,7 +280,7 @@ export default function Portfolio() {
                 <Github size={20} /> GitHub
               </a>
               <a
-                href="mailto:rahulbamniya93184@gmail.com"
+                href="mailto:rahul.bamaniya0907@gmail.com"
                 className="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full transition-all hover:scale-105"
               >
                 <Mail size={20} /> Email
@@ -244,56 +292,93 @@ export default function Portfolio() {
 
       {/* About Section */}
       <section className="py-20 px-4 bg-slate-800/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            About Me
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-slate-900/50 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
-              <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-                <GraduationCap className="text-purple-400" /> Education
-              </h3>
-              <div className="space-y-4 text-gray-300">
-                <div className="border-l-2 border-purple-500 pl-4">
-                  <p className="font-semibold text-white text-lg">Bachelor of Technology - Computer Science</p>
-                  <p className="text-purple-400">SGSITS, Indore</p>
-                  <p className="text-sm text-gray-400">Nov 2022 - Present | CGPA: 7.37</p>
-                </div>
-                <div className="border-l-2 border-pink-500 pl-4">
-                  <p className="font-semibold text-white">XII (MP Board) - PCM</p>
-                  <p className="text-pink-400">Excellence Bal Vinay Mandir, Indore</p>
-                  <p className="text-sm text-gray-400">2019 - 2021 | 94%</p>
-                </div>
-                <div className="border-l-2 border-purple-500 pl-4">
-                  <p className="font-semibold text-white">X (MP Board)</p>
-                  <p className="text-purple-400">MGM Higher Secondary School, Indore</p>
-                  <p className="text-sm text-gray-400">2007 - 2019 | 93%</p>
-                </div>
-              </div>
-            </div>
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+      About Me
+    </h2>
 
-            <div className="bg-slate-900/50 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
-              <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-                <Mail className="text-pink-400" /> Contact Info
-              </h3>
-              <div className="space-y-4 text-gray-300">
-                <p className="flex items-center gap-3">
-                  <MapPin size={20} className="text-purple-400 flex-shrink-0" />
-                  <span>Indore, Madhya Pradesh, India</span>
-                </p>
-                <p className="flex items-center gap-3">
-                  <Phone size={20} className="text-purple-400 flex-shrink-0" />
-                  <span>+91 9340475725</span>
-                </p>
-                <p className="flex items-center gap-3">
-                  <Mail size={20} className="text-purple-400 flex-shrink-0" />
-                  <span className="break-all">rahulbamniya93184@gmail.com</span>
-                </p>
-              </div>
-            </div>
+    {/* About Me Text */}
+    <div className="mb-12 max-w-8xl mx-auto">
+  <div className="grid place-items-center">
+    <div className="bg-slate-900/60 p-8 rounded-2xl border border-purple-500/30 shadow-lg shadow-purple-500/10">
+      <p className="text-lg text-gray-300 leading-relaxed text-center">
+        I am a Computer Engineering undergraduate passionate about building
+        production-ready software and intelligent systems. My work focuses on
+        developing scalable full-stack applications and Agentic AI solutions
+        that solve real-world problems. I enjoy working in fast-paced startup
+        environments, contributing to open-source projects, and learning
+        through hands-on engineering and applied AI research.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <div className="grid md:grid-cols-2 gap-8">
+      
+      {/* Education */}
+      <div className="bg-slate-900/50 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
+        <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+          <GraduationCap className="text-purple-400" /> Education
+        </h3>
+        <div className="space-y-4 text-gray-300">
+          <div className="border-l-2 border-purple-500 pl-4">
+            <p className="font-semibold text-white text-lg">
+              Bachelor of Technology – Computer Science
+            </p>
+            <p className="text-purple-400">SGSITS, Indore</p>
+            <p className="text-sm text-gray-400">
+              Nov 2022 – Present | CGPA: 7.37
+            </p>
+          </div>
+          <div className="border-l-2 border-pink-500 pl-4">
+            <p className="font-semibold text-white">
+              XII (MP Board) – PCM
+            </p>
+            <p className="text-pink-400">Excellence Bal Vinay Mandir, Indore</p>
+            <p className="text-sm text-gray-400">
+              2019 – 2021 | 94%
+            </p>
+          </div>
+          <div className="border-l-2 border-purple-500 pl-4">
+            <p className="font-semibold text-white">
+              X (MP Board)
+            </p>
+            <p className="text-purple-400">MGM Higher Secondary School, Indore</p>
+            <p className="text-sm text-gray-400">
+              2007 – 2019 | 93%
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Contact Info */}
+      <div className="bg-slate-900/50 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
+        <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+          <Mail className="text-pink-400" /> Contact Info
+        </h3>
+        <div className="space-y-4 text-gray-300">
+          <p className="flex items-center gap-3">
+            <MapPin size={20} className="text-purple-400 flex-shrink-0" />
+            <span>Indore, Madhya Pradesh, India</span>
+          </p>
+          <p className="flex items-center gap-3">
+            <Phone size={20} className="text-purple-400 flex-shrink-0" />
+            <span>+91 9340475725</span>
+          </p>
+          <p className="flex items-center gap-3">
+            <Mail size={20} className="text-purple-400 flex-shrink-0" />
+            <span className="break-all">
+              rahul.bamaniya0907@gmail.com
+            </span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Experience Section */}
       <section className="py-20 px-4">
@@ -499,7 +584,7 @@ export default function Portfolio() {
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="mailto:rahulbamniya93184@gmail.com"
+              href="mailto:rahul.bamaniya0907@gmail.com"
               className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-full transition-all hover:scale-105 text-lg"
             >
               <Mail size={24} /> Email Me
