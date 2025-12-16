@@ -272,7 +272,7 @@ export default function Portfolio() {
                 <Linkedin size={20} /> LinkedIn
               </a>
               <a
-                href="https://github.com/rahulbamaniya"
+                href="https://github.com/rahulbamnuya"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-full transition-all hover:scale-105"
@@ -358,21 +358,48 @@ export default function Portfolio() {
           <Mail className="text-pink-400" /> Contact Info
         </h3>
         <div className="space-y-4 text-gray-300">
-          <p className="flex items-center gap-3">
-            <MapPin size={20} className="text-purple-400 flex-shrink-0" />
-            <span>Indore, Madhya Pradesh, India</span>
-          </p>
-          <p className="flex items-center gap-3">
-            <Phone size={20} className="text-purple-400 flex-shrink-0" />
-            <span>+91 9340475725</span>
-          </p>
-          <p className="flex items-center gap-3">
-            <Mail size={20} className="text-purple-400 flex-shrink-0" />
-            <span className="break-all">
-              rahul.bamaniya0907@gmail.com
-            </span>
-          </p>
-        </div>
+  <p className="flex items-center gap-3">
+    <MapPin size={20} className="text-purple-400 flex-shrink-0" />
+    <span>Indore, Madhya Pradesh, India</span>
+  </p>
+
+  <p className="flex items-center gap-3">
+    <Phone size={20} className="text-purple-400 flex-shrink-0" />
+    <span>+91 9340475725</span>
+  </p>
+
+  <p className="flex items-center gap-3">
+    <Mail size={20} className="text-purple-400 flex-shrink-0" />
+    <span className="break-all">
+      rahul.bamaniya0907@gmail.com
+    </span>
+  </p>
+
+  <p className="flex items-center gap-3">
+    <Github size={20} className="text-purple-400 flex-shrink-0" />
+    <a
+      href="https://github.com/rahulbamnuya"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-purple-400 transition-colors"
+    >
+      github.com/rahulbamnuya
+    </a>
+  </p>
+
+  <p className="flex items-center gap-3">
+    <Linkedin size={20} className="text-purple-400 flex-shrink-0" />
+    <a
+      href="https://www.linkedin.com/in/rahul-bamaniya-1375772a6/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-purple-400 transition-colors"
+    >
+      linkedin.com/in/rahul-bamaniya
+    </a>
+  </p>
+</div>
+
       </div>
 
     </div>
@@ -598,7 +625,7 @@ export default function Portfolio() {
               <Linkedin size={24} /> LinkedIn
             </a>
             <a
-              href="https://github.com/rahulbamaniya"
+              href="https://github.com/rahulbamnuya"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-8 py-4 rounded-full transition-all hover:scale-105 text-lg"
