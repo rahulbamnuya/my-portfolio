@@ -1,0 +1,13 @@
+ContextFlow RAG Engine | Production-Grade Adaptive RAG Platform (GitHub)
+
+• Built a production-grade adaptive Retrieval-Augmented Generation (RAG) engine using FastAPI, LangGraph, and Qdrant for context-aware and grounded response generation.
+
+• Designed agentic RAG workflows with query routing, retrieval validation, query rewriting, and iterative context refinement to improve retrieval quality and answer relevance.
+
+• Implemented hybrid retrieval pipelines using BM25, vector search (Qdrant/FAISS), and Flashrank reranking to increase contextual accuracy and reduce noisy retrieval.
+
+• Developed automated response evaluation using an LLM-as-a-Judge framework for hallucination detection, source grounding, and response verification.
+
+• Built document ingestion, embedding generation, indexing, and conversational memory pipelines enabling scalable knowledge retrieval and context persistence.
+
+https://github.com/rahulbamnuya/contextflow-rag-engine

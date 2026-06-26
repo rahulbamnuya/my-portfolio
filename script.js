@@ -102,23 +102,18 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
 });
 
 // ── HAMBURGER MENU ──
-document.getElementById('ham').addEventListener('click', () => {
-  const links = document.querySelector('.nav-links');
-  if (links.style.display === 'flex') {
-    links.style.display = '';
-    links.style.position = '';
-  } else {
-    links.style.display = 'flex';
-    links.style.flexDirection = 'column';
-    links.style.position = 'absolute';
-    links.style.top = '65px';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.background = 'rgba(8,11,16,0.98)';
-    links.style.padding = '1rem 2rem';
-    links.style.gap = '1rem';
-    links.style.borderBottom = '1px solid rgba(99,102,241,0.15)';
-  }
+const ham = document.getElementById('ham');
+const navLinksContainer = document.querySelector('.nav-links');
+
+ham.addEventListener('click', () => {
+  navLinksContainer.classList.toggle('active');
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinksContainer.classList.remove('active');
+  });
 });
 
 // ── TYPED EFFECT on hero ──
@@ -131,6 +126,10 @@ function typeRole() {
   if (!deleting) {
     heroSub.textContent = role.slice(0, ++charIdx);
     if (charIdx === role.length) { deleting = true; setTimeout(typeRole, 1800); return; }
+  } else {
+    heroSub.textContent = role.slice(0, --charIdx);
+    if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; }
+  }
   setTimeout(typeRole, deleting ? 45 : 80);
 }
 typeRole();
@@ -140,16 +139,16 @@ const modal = document.getElementById('projectModal');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
 
-// Project Data
 const projectDetails = {
   rag: {
-    title: "ContextFlow — Self-Correcting RAG",
-    sub: "Adaptive Agentic Retrieval Architecture",
+    title: "ContextFlow RAG Engine | Adaptive RAG Platform",
+    sub: "Self-Correcting Retrieval-Augmented Generation Simulator",
     bullets: [
-      "Engineered a <strong>multi-agent feedback loop</strong> with LangGraph controlling state validation.",
-      "Integrates <strong>Qdrant vector databases</strong> and BM25 hybrid search indexes.",
-      "Features <strong>Query Rewriting</strong> which evaluates initial document chunks, scoring retrieval relevance, and dynamically expanding keywords if initial scores drop below 0.70.",
-      "Implements <strong>LLM-as-Judge hallucination checks</strong>, analyzing generated answers against retrieved context vectors to enforce factual grounding."
+      "Built a production-grade adaptive Retrieval-Augmented Generation (RAG) engine using FastAPI, LangGraph, and Qdrant for context-aware and grounded response generation.",
+      "Designed agentic RAG workflows with query routing, retrieval validation, query rewriting, and iterative context refinement to improve retrieval quality and answer relevance.",
+      "Implemented hybrid retrieval pipelines using BM25, vector search (Qdrant/FAISS), and Flashrank reranking to increase contextual accuracy and reduce noisy retrieval.",
+      "Developed automated response evaluation using an LLM-as-a-Judge framework for hallucination detection, source grounding, and response verification.",
+      "Built document ingestion, embedding generation, indexing, and conversational memory pipelines enabling scalable knowledge retrieval and context persistence."
     ],
     sandboxHtml: `
       <div class="sandbox-sec">
@@ -226,13 +225,13 @@ const projectDetails = {
     }
   },
   route: {
-    title: "RouteOptimizer — Last-Mile Logistics",
+    title: "RouteOptimizer — Last-Mile Logistics Platform",
     sub: "CVRPTW Savings Optimization Sandbox",
     bullets: [
-      "Solves the <strong>Capacitated Vehicle Routing Problem with Time Windows (CVRPTW)</strong> using custom savings algorithms.",
-      "Integrates real <strong>OSRM road-network metrics</strong> to fetch distance and duration matrixes.",
-      "Minimizes vehicle count and fleet idle times by clustering customer demand using angular sweeps.",
-      "Reduces dispatching computation latency by <strong>40%</strong> through asynchronous parallel Python workers."
+      "Led end-to-end architecture, planning, and execution of a full-stack logistics optimization platform; managed sprint planning, task ownership, technical decisions, code reviews, and cross-module integration in an Agile/Scrum environment.",
+      "Designed and developed a multi-service architecture with an independent Python optimization engine and Node.js/Express backend, enabling scalable routing computation and service decoupling through REST-based communication and Dockerized deployment.",
+      "Built a custom route optimization pipeline for CVRPTW incorporating vehicle capacity, delivery time windows, road restrictions, and multi-trip scheduling to improve fleet utilization and operational efficiency.",
+      "Integrated OpenStreetMap and OSRM for real road-network routing, implemented QR-based driver workflows and route visualization, achieving 20–30% route distance reduction and 97.1% delivery fulfillment."
     ],
     sandboxHtml: `
       <div class="sandbox-sec">
@@ -346,13 +345,15 @@ const projectDetails = {
     }
   },
   booking: {
-    title: "DreamNest — Hotel Booking System",
+    title: "DreamNest | Full-Stack Hotel Booking Platform",
     sub: "Secure Transaction & Booking Simulator",
     bullets: [
-      "Engineered secure booking endpoints using **JWT tokens** with middleware role validation.",
-      "Implements **real-time availability locks** in MongoDB to prevent double bookings.",
-      "Integrated **Stripe payment webhooks** to automatically confirm room locks on successful transactions.",
-      "Optimized query response times by **35%** by using database indexes and aggregation pipelines."
+      "Built a full-stack MERN hotel booking platform enabling hotel discovery, room availability management, and end-to-end reservation workflows.",
+      "Developed scalable REST APIs using Node.js and Express.js for authentication, hotel management, room allocation, and booking operations.",
+      "Implemented secure access control with JWT authentication, password hashing, role-based authorization, and protected user/admin workflows.",
+      "Designed MongoDB data models and booking validation logic to manage hotels, rooms, and reservations while preventing inconsistent booking states.",
+      "Integrated Cloudinary for media management and Twilio for real-time booking notifications, improving platform usability and booking experience.",
+      "Developed a responsive React frontend with admin dashboards, search and filtering, and booking management capabilities."
     ],
     sandboxHtml: `
       <div class="sandbox-sec">
@@ -481,3 +482,18 @@ modalClose.addEventListener('click', closeModal);
 window.addEventListener('click', (e) => {
   if (e.target === modal) closeModal();
 });
+
+// ── COLLAPSIBLE BULLETS INTERACTION ──
+function toggleBullets(btn) {
+  const panel = btn.previousElementSibling;
+  panel.classList.toggle('active');
+  const isExpanded = panel.classList.contains('active');
+  if (isExpanded) {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+    btn.innerHTML = 'Show Less ▴';
+  } else {
+    panel.style.maxHeight = null;
+    btn.innerHTML = 'Show More Details ▾';
+  }
+}
+

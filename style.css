@@ -166,7 +166,6 @@ section { padding: 6rem 0; }
 .avatar-ring {
   width: 180px; height: 180px; border-radius: 50%;
   background: var(--grad); padding: 3px;
-  animation: spin 8s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 .avatar-inner {
@@ -175,6 +174,11 @@ section { padding: 6rem 0; }
   display: flex; align-items: center; justify-content: center;
   font-size: 2.5rem; font-weight: 900; color: var(--text);
   letter-spacing: -2px;
+  overflow: hidden;
+}
+.avatar-img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
 }
 .avatar-glow {
   position: absolute; width: 200px; height: 200px; border-radius: 50%;
@@ -196,49 +200,54 @@ section { padding: 6rem 0; }
 .about-lead { font-size: 1.05rem !important; line-height: 1.7; color: var(--text) !important; margin-bottom: 1.5rem; }
 .about-text strong { color: var(--text); }
 
-/* Pillars Section */
-.about-pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* About List details (No rectangles/cards) */
+.about-list {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
   margin: 1.5rem 0;
 }
-.pillar {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(99, 102, 241, 0.08);
-  border-radius: 12px;
-  padding: 1.1rem;
-  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+.about-item h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-.pillar:hover {
-  border-color: rgba(99, 102, 241, 0.25);
-  background: rgba(99, 102, 241, 0.03);
-  transform: translateY(-2px);
-}
-.pillar h5 {
-  font-size: 0.88rem; font-weight: 700; color: #fff;
-  margin-bottom: 0.4rem;
-}
-.pillar p {
-  font-size: 0.76rem !important; color: var(--muted) !important; line-height: 1.5; margin: 0 !important;
+.about-item p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 !important;
 }
 
-/* Horizontal Highlights */
-.about-highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
+/* About Metadata items (Clean horizontal lines or inline lists) */
+.about-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.2rem;
 }
-.highlight-card {
-  display: flex; gap: 0.8rem; align-items: center;
-  padding: .9rem 1.2rem; background: var(--card); border: 1px solid var(--border);
-  border-radius: 10px; transition: border-color .2s, transform .2s;
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--muted);
 }
-.highlight-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-.highlight-card span { font-size: 1.3rem; }
-.highlight-card strong { font-size: .88rem; display: block; color: var(--text); }
-.highlight-card p { font-size: .78rem; color: var(--muted); margin: 0; }
+.meta-item strong {
+  color: #fff;
+}
+.meta-icon {
+  font-size: 1.15rem;
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+}
 
 /* ── EXPERIENCE ── */
 #experience { background: var(--bg2); }
@@ -322,7 +331,7 @@ section { padding: 6rem 0; }
 
 /* Card strip view */
 .edu-cards {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+  display: none;
 }
 .edu-card {
   display: flex; gap: 1.2rem; align-items: flex-start;
@@ -415,11 +424,11 @@ section { padding: 6rem 0; }
 }
 
 .project-card.card-booking:hover {
-  border-color: rgba(139, 92, 246, 0.4);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.12), 0 0 0 1px rgba(139, 92, 246, 0.05) inset;
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.12), 0 0 0 1px rgba(16, 185, 129, 0.05) inset;
 }
 .project-card.card-booking::before {
-  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  background: linear-gradient(90deg, #10b981, #059669);
 }
 
 .project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
@@ -435,7 +444,7 @@ section { padding: 6rem 0; }
 .project-sub { font-size: .82rem; margin-bottom: .8rem; font-weight: 600; }
 .card-rag .project-sub { color: #818cf8; }
 .card-route .project-sub { color: #22d3ee; }
-.card-booking .project-sub { color: #a78bfa; }
+.card-booking .project-sub { color: #34d399; }
 .project-summary-box {
   background: rgba(255, 255, 255, 0.02);
   border: 1px dashed rgba(255, 255, 255, 0.08);
@@ -476,9 +485,9 @@ section { padding: 6rem 0; }
   border-color: rgba(6, 182, 212, 0.2);
 }
 .card-booking .project-tags span {
-  background: rgba(139, 92, 246, 0.08);
-  color: #c084fc;
-  border-color: rgba(139, 92, 246, 0.2);
+  background: rgba(16, 185, 129, 0.08);
+  color: #6ee7b7;
+  border-color: rgba(16, 185, 129, 0.2);
 }
 
 /* ── SKILLS ── */
@@ -488,7 +497,7 @@ section { padding: 6rem 0; }
   background: var(--card); border: 1px solid var(--border);
   border-radius: 14px; padding: 1.5rem;
   transition: border-color .2s, transform .2s;
-}
+} 
 .skill-category:hover { border-color: rgba(99,102,241,.4); transform: translateY(-3px); }
 .skill-icon { font-size: 1.6rem; margin-bottom: .5rem; }
 .skill-category h4 { font-size: .95rem; font-weight: 700; margin-bottom: .9rem; color: var(--text); }
@@ -531,16 +540,20 @@ section { padding: 6rem 0; }
 
 /* ── CERTS ── */
 #certs { background: var(--bg2); }
-.certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+.certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
 .cert-card {
   background: var(--card); border: 1px solid var(--border);
-  border-radius: 14px; padding: 1.5rem; text-align: center;
-  transition: all .3s;
+  border-radius: 14px; padding: 1.8rem 1.5rem; text-align: center;
+  transition: all .3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 .cert-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(99,102,241,.15); }
-.cert-icon { font-size: 2rem; margin-bottom: .8rem; }
-.cert-card h4 { font-size: .9rem; font-weight: 700; margin-bottom: .3rem; }
-.cert-card p { font-size: .8rem; color: var(--muted); }
+.cert-icon { font-size: 2.2rem; margin-bottom: .2rem; }
+.cert-issuer { font-size: 0.95rem; font-weight: 700; color: #fff; }
+.cert-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin: 0; }
 
 /* ── CONTACT ── */
 #contact { background: var(--bg); }
@@ -576,6 +589,40 @@ footer {
 }
 footer p { color: var(--muted); font-size: .88rem; }
 .footer-sub { font-size: .78rem; margin-top: .4rem; }
+
+
+
+/* ── COLLAPSIBLE BULLETS FOR EXPERIENCE ── */
+.collapsible-bullets {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.collapsible-bullets.active {
+  max-height: 600px;
+}
+.show-more-bullets-btn {
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 6px;
+  color: var(--accent);
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.4rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.2s ease;
+  margin-top: 0.75rem;
+}
+.show-more-bullets-btn:hover {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
 
 /* ── MODAL STYLES ── */
 .modal-overlay {
@@ -703,14 +750,143 @@ footer p { color: var(--muted); font-size: .88rem; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .certs-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
-  .edu-cards { grid-template-columns: 1fr; }
+  .edu-table-wrap { display: none; }
+  .edu-cards { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
 }
 @media (max-width: 640px) {
-  .nav-links { display: none; }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 65px; left: 0; right: 0;
+    background: rgba(8, 11, 16, 0.98);
+    padding: 1.5rem 2rem;
+    gap: 1.2rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
   .btn-nav { display: none; }
   .hamburger { display: block; }
   .skills-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: 1fr 1fr; }
   h1 { letter-spacing: -2px; }
   .hero-stats { gap: .8rem; }
+  
+  /* Modal UX fixes */
+  .modal-content {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  #bookingSteps {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .sandbox-input-row {
+    flex-direction: column;
+  }
+}
+
+/* ── WHATSAPP CONNECT STYLES ── */
+.btn-whatsapp {
+  padding: .8rem 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #fff;
+  font-weight: 600;
+  font-size: .95rem;
+  transition: all .2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 211, 102, 0.08);
+}
+.btn-whatsapp:hover {
+  border-color: #25d366;
+  background: rgba(37, 211, 102, 0.18);
+  box-shadow: 0 0 24px rgba(37, 211, 102, 0.25);
+  transform: translateY(-3px);
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: waPulse 2s infinite;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+.whatsapp-icon {
+  width: 32px;
+  height: 32px;
+}
+.whatsapp-tooltip {
+  position: absolute;
+  right: 75px;
+  background-color: #0d1117;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(10px);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes waPulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4), 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
+  }
+  .whatsapp-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .whatsapp-tooltip {
+    display: none;
+  }
 }
